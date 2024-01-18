@@ -1,0 +1,20 @@
+class Solution {
+    public int divisorSubstrings(int num, int k) {
+        int a=num;
+        int b=a;
+        int count1 = 0;
+        int count2 = 0;
+        while(num!=0){
+            count1++;
+            num = num/10;
+        }
+        while(count1>=k){
+            double r=a%Math.pow(10,k);
+            if(b%r==0) count2++;
+            a = a/10;
+            count1--;
+        }
+        return count2;
+
+    }
+}
